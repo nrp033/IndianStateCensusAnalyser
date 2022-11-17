@@ -18,10 +18,10 @@ namespace IndianStateCenSusAnaLyser
         }
 
         public ExceptionType eType;
+
         public CensusAnalyserException(string message, ExceptionType exceptionType) : base(message)
         {
             this.eType = exceptionType;
         }
-
     }
 }

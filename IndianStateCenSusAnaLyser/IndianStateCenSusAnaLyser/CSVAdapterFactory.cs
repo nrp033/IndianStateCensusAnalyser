@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace IndianStateCenSusAnaLyser
 {
 
-    class CSVAdapterFactory
+    internal class CSVAdapterFactory
     {
         public Dictionary<string, CensusDTO> LoadCsvData(CensusAnalyser.Country country, string csvFilePath, string dataHeaders)
         {
@@ -16,12 +16,16 @@ namespace IndianStateCenSusAnaLyser
             {
                 case (CensusAnalyser.Country.INDIA):
                     return new IndianCensusAdapter().LoadCensusData(csvFilePath, dataHeaders);
+
                 //case (CensusAnalyser.Country.US):
-                //    return new USCensusAdapter().LoadUSCensusData(csvFilePath, dataHeaders);
+                //    return new USCensusAdapter().LoadCensusData(csvFilePath, dataHeaders);
+
                 default:
                     throw new CensusAnalyserException("No Such Country", CensusAnalyserException.ExceptionType.NO_SUCH_COUNTRY);
+
             }
         }
+
     }
 
 
