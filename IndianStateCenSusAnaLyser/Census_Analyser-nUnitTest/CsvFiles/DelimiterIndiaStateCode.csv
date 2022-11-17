@@ -1,4 +1,4 @@
-﻿"SrNo,State Name,TIN,StateCode"
+﻿SrNo,State Name,TIN,StateCode
 1-Andaman and Nicobar Islands-35-AN
 2-Andhra Pradesh-28-AP
 3-Andhra Pradesh New-37-AD
@@ -13,7 +13,7 @@
 12-Goa-30-GA
 13-Gujarat-24-GJ
 14-Haryana-6-HR
-"15-,Himachal Pradesh-2-HP"
+15-,Himachal Pradesh-2-HP
 16-Jammu and Kashmir-1-JK
 17-Jharkhand-20-JH
 18-Karnataka-29-KA
