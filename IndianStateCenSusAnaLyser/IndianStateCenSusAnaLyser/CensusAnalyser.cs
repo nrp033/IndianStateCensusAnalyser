@@ -9,22 +9,19 @@ namespace IndianStateCenSusAnaLyser
 {
     public class CensusAnalyser
     {
-
-        public static int a = 10;
         public enum Country
         {
-            INDIA, US, BRAZIL
+            INDIA,
+            US,
+            BRAZIL
         }
-
-
         Dictionary<string, CensusDTO> dataMap;
-        public Dictionary<string, CensusDTO> LoadCensusData(string csvFilePath, Country country, string dataHeaders)
+
+        public Dictionary<string, CensusDTO> LoadCensusData(Country country, string csvFilePath, string dataHeaders)
         {
-            //CensusAnalyser obj = new CensusAnalyser();
-            //Console.WriteLine(obj.a);
             dataMap = new CSVAdapterFactory().LoadCsvData(country, csvFilePath, dataHeaders);
             return dataMap;
         }
-
     }
+
 }

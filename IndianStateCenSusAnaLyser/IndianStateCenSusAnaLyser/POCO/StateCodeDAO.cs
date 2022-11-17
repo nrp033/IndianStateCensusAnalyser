@@ -9,6 +9,7 @@ namespace IndianStateCenSusAnaLyser.POCO
 
     public class StateCodeDAO
     {
+
         public int serialNumber;
         public string stateName;
         public int tin;
@@ -21,7 +22,5 @@ namespace IndianStateCenSusAnaLyser.POCO
             this.tin = Convert.ToInt32(v3);
             this.stateCode = v4;
         }
-
     }
-
 }

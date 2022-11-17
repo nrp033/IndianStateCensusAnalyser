@@ -21,7 +21,6 @@ namespace IndianStateCenSusAnaLyser.POCO
             this.density = Convert.ToUInt32(density);
         }
 
-
     }
 
 }

@@ -9,6 +9,8 @@ namespace IndianStateCenSusAnaLyser.DTO
 {
     public class CensusDTO
     {
+
+        //Class Members
         public int serialNumber;
         public string stateName;
         public string state;
@@ -24,7 +26,7 @@ namespace IndianStateCenSusAnaLyser.DTO
         public double populationDensity;
         public double housingDensity;
 
-        public CensusDTO(StateCodeDAO stateCodeDao)
+        public CensusDTO(StateCodeDAO stateCodeDao)               //DTO-Data Transfer Objects
         {
             this.serialNumber = stateCodeDao.serialNumber;
             this.stateName = stateCodeDao.stateName;
@@ -39,17 +41,6 @@ namespace IndianStateCenSusAnaLyser.DTO
             this.area = censusDataDao.area;
             this.density = censusDataDao.density;
         }
-
-        //public CensusDTO(USCensusDAO usCensusDao)
-        //{
-        //    this.stateCode = usCensusDao.stateId;
-        //    this.stateName = usCensusDao.stateName;
-        //    this.population = usCensusDao.population;
-        //    this.housingUnits = usCensusDao.housingUnits;
-        //    this.totalArea = usCensusDao.totalArea;
-        //    this.waterArea = usCensusDao.waterArea;
-        //    this.landArea = usCensusDao.landArea;
-        //}
 
     }
 
