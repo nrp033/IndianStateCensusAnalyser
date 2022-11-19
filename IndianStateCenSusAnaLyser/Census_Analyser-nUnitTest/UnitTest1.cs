@@ -50,7 +50,7 @@ namespace Census_Analyser_nUnitTest
         public void GivenStateCensusdataFile_WhenReaded_ShouldReturnStateCensusDataCount()
         {
 
-            StateRecord = censusAnalyser.LoadCensusData(Country.INDIA, indianStateCodeFilePath, indianStateCodeHeaders);
+            StateRecord = censusAnalyser.LoadCensusData(indianStateCodeFilePath, Country.INDIA, indianStateCodeHeaders);
             Assert.AreEqual(37, StateRecord.Count);
 
         }
@@ -61,7 +61,7 @@ namespace Census_Analyser_nUnitTest
         {
             //For Census Data
             int expected = 29;
-            TotalRecord = censusAnalyser.LoadCensusData(Country.INDIA, indianStateCensusFilePath, indianStateCensusHeaders);
+            TotalRecord = censusAnalyser.LoadCensusData(indianStateCensusFilePath, Country.INDIA,  indianStateCensusHeaders);
             Assert.AreEqual(expected, TotalRecord.Count);
 
         }
@@ -71,7 +71,7 @@ namespace Census_Analyser_nUnitTest
         public void GivenWrongIndianCensusDataFile_WhenRead_ShouldReturnCustomException()
         {
             //Passing Wrong Census data File
-            var censusException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, wrongIndianStateCensusFilePath, indianStateCensusHeaders));
+            var censusException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(wrongIndianStateCensusFilePath, Country.INDIA,  indianStateCensusHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, censusException.eType);
 
         }
@@ -80,7 +80,7 @@ namespace Census_Analyser_nUnitTest
         public void GivenWrongIndianCensusDataFileType_WhenRead_ShouldReturnCustomException()
         {
             //Passing Wrong Census Data File Type
-            var censusException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, wrongIndianStateCensusFileType, indianStateCensusHeaders));
+            var censusException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(wrongIndianStateCensusFileType, Country.INDIA, indianStateCensusHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE, censusException.eType);
 
         }
@@ -90,7 +90,7 @@ namespace Census_Analyser_nUnitTest
         [Test]
         public void GivenIndianCensusDataFile_WhenDelimiterNotProper_ShouldReturnException()
         {
-            var censusException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, delimiterIndianCensusFilePath, indianStateCensusHeaders));
+            var censusException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(delimiterIndianCensusFilePath, Country.INDIA, indianStateCensusHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.INCORRECT_DELIMITER, censusException.eType);
         }
 
@@ -102,7 +102,7 @@ namespace Census_Analyser_nUnitTest
         public void GivenIndianStateCodeFile_WhenReaded_ShouldReturnStateCodeDataCount()
         {
             //For State Code
-            StateRecord = censusAnalyser.LoadCensusData(Country.INDIA, indianStateCodeFilePath, indianStateCodeHeaders);
+            StateRecord = censusAnalyser.LoadCensusData(indianStateCodeFilePath, Country.INDIA,  indianStateCodeHeaders);
             Assert.AreEqual(37, StateRecord.Count);
 
         }
@@ -112,7 +112,7 @@ namespace Census_Analyser_nUnitTest
         public void GivenWrongIndianStateCensusFile_WhenRead_ShouldReturnCustomException()
         {
             //Passing Wrong State Census File
-            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, wrongIndianStateCensusFilePath, indianStateCodeHeaders));
+            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(wrongIndianStateCensusFilePath, Country.INDIA, indianStateCodeHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, stateException.eType);
 
         }
@@ -121,7 +121,7 @@ namespace Census_Analyser_nUnitTest
         public void GivenWrongIndianStateCodeFileType_WhenRead_ShouldReturnCustomException()
         {
             //Passing Wrong State Code File Type
-            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, wrongIndianStateCodeFileType, indianStateCensusHeaders));
+            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(wrongIndianStateCodeFileType, Country.INDIA,  indianStateCensusHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE, stateException.eType);
 
         }
@@ -130,7 +130,7 @@ namespace Census_Analyser_nUnitTest
         [Test]
         public void GivenIndianStateCodeFile_WhenDelimiterNotProper_ShouldReturnException()
         {
-            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, delimiterIndianstateCodeFilePath, indianStateCodeHeaders));
+            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(delimiterIndianstateCodeFilePath, Country.INDIA,  indianStateCodeHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.INCORRECT_DELIMITER, stateException.eType);
         }
 
@@ -138,7 +138,7 @@ namespace Census_Analyser_nUnitTest
         [Test]
         public void GivenIndianStateCodeFile_WhenHeaderNotProper_ShouldReturnException()
         {
-            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(Country.INDIA, wrongHeaderStateCodeFilePath, indianStateCodeHeaders));
+            var stateException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(wrongHeaderStateCodeFilePath, Country.INDIA, indianStateCodeHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.INCORRECT_HEADER, stateException.eType);
         }
     }
